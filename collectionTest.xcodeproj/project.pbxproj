@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3D41E52699E4AE0028E70E /* aboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D41E42699E4AE0028E70E /* aboutUsController.swift */; };
+		4A3D41E72699E4EA0028E70E /* roomCientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D41E62699E4EA0028E70E /* roomCientViewController.swift */; };
 		4A6DF4A82696DBBF003803B5 /* SrattViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6DF4A72696DBBF003803B5 /* SrattViewController.swift */; };
 		4A6DF4AA2696E2F4003803B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6DF4A92696E2F4003803B5 /* LoginViewController.swift */; };
 		4A6DF4AC2696E313003803B5 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6DF4AB2696E313003803B5 /* RegistrationViewController.swift */; };
+		4A7CE3AA269DAC2C007AA4BD /* extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7CE3A9269DAC2C007AA4BD /* extention.swift */; };
 		4A85F7832695EE2F00E50359 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F7822695EE2F00E50359 /* AppDelegate.swift */; };
 		4A85F7852695EE2F00E50359 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F7842695EE2F00E50359 /* SceneDelegate.swift */; };
 		4A85F78A2695EE2F00E50359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A85F7882695EE2F00E50359 /* Main.storyboard */; };
@@ -18,6 +21,8 @@
 		4A85F7972695EEA900E50359 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F7962695EEA900E50359 /* MainController.swift */; };
 		4A85F7992695FFBD00E50359 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F7982695FFBD00E50359 /* CollectionViewCell.swift */; };
 		4A85F79B269606AC00E50359 /* detaillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F79A269606AC00E50359 /* detaillController.swift */; };
+		4AAF725C269EDD3800D6AB35 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4AAF725B269EDD3800D6AB35 /* Lottie */; };
+		4AAF7260269EEFD900D6AB35 /* pizza.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AAF725F269EEFD900D6AB35 /* pizza.json */; };
 		4ABC864126999DC700FC6ED1 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABC864026999DC700FC6ED1 /* SideMenu */; };
 		4ABC86432699BF6A00FC6ED1 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC86422699BF6A00FC6ED1 /* SideMenu.swift */; };
 		4ACBA878269803D900DFF612 /* NetWorkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBA877269803D900DFF612 /* NetWorkDataManager.swift */; };
@@ -30,9 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A3D41E42699E4AE0028E70E /* aboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutUsController.swift; sourceTree = "<group>"; };
+		4A3D41E62699E4EA0028E70E /* roomCientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roomCientViewController.swift; sourceTree = "<group>"; };
 		4A6DF4A72696DBBF003803B5 /* SrattViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SrattViewController.swift; sourceTree = "<group>"; };
 		4A6DF4A92696E2F4003803B5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4A6DF4AB2696E313003803B5 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		4A7CE3A9269DAC2C007AA4BD /* extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extention.swift; sourceTree = "<group>"; };
 		4A85F77F2695EE2F00E50359 /* collectionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collectionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A85F7822695EE2F00E50359 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A85F7842695EE2F00E50359 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +51,7 @@
 		4A85F7962695EEA900E50359 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		4A85F7982695FFBD00E50359 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4A85F79A269606AC00E50359 /* detaillController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detaillController.swift; sourceTree = "<group>"; };
+		4AAF725F269EEFD900D6AB35 /* pizza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pizza.json; sourceTree = "<group>"; };
 		4ABC86422699BF6A00FC6ED1 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		4ACBA877269803D900DFF612 /* NetWorkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkDataManager.swift; sourceTree = "<group>"; };
 		4ACBA87926980F0500DFF612 /* ModelPizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPizza.swift; sourceTree = "<group>"; };
@@ -55,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AAF725C269EDD3800D6AB35 /* Lottie in Frameworks */,
 				4AFCB6FD2697179A00CD02F5 /* FirebaseAnalytics in Frameworks */,
 				4AFCB6FF2697179A00CD02F5 /* FirebaseAuth in Frameworks */,
 				4ABC864126999DC700FC6ED1 /* SideMenu in Frameworks */,
@@ -81,6 +91,8 @@
 				4A85F7982695FFBD00E50359 /* CollectionViewCell.swift */,
 				4A85F7962695EEA900E50359 /* MainController.swift */,
 				4A85F79A269606AC00E50359 /* detaillController.swift */,
+				4A3D41E42699E4AE0028E70E /* aboutUsController.swift */,
+				4A3D41E62699E4EA0028E70E /* roomCientViewController.swift */,
 			);
 			name = pizzaControllers;
 			sourceTree = "<group>";
@@ -118,6 +130,7 @@
 				4A85F79D2696089800E50359 /* Views */,
 				4A85F79E269608AC00E50359 /* SupportFiles */,
 				4A85F78B2695EE3700E50359 /* Assets.xcassets */,
+				4AAF725F269EEFD900D6AB35 /* pizza.json */,
 				4A85F7902695EE3700E50359 /* Info.plist */,
 				4AFCB702269717E800CD02F5 /* GoogleService-Info.plist */,
 			);
@@ -140,6 +153,7 @@
 				4A85F7822695EE2F00E50359 /* AppDelegate.swift */,
 				4A85F7842695EE2F00E50359 /* SceneDelegate.swift */,
 				4ACBA87B269861D400DFF612 /* Constants.swift */,
+				4A7CE3A9269DAC2C007AA4BD /* extention.swift */,
 			);
 			name = SupportFiles;
 			sourceTree = "<group>";
@@ -174,6 +188,7 @@
 				4AFCB6FE2697179A00CD02F5 /* FirebaseAuth */,
 				4AFCB7002697179A00CD02F5 /* FirebaseFirestore */,
 				4ABC864026999DC700FC6ED1 /* SideMenu */,
+				4AAF725B269EDD3800D6AB35 /* Lottie */,
 			);
 			productName = collectionTest;
 			productReference = 4A85F77F2695EE2F00E50359 /* collectionTest.app */;
@@ -205,6 +220,7 @@
 			packageReferences = (
 				4AFCB6FB2697179A00CD02F5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4ABC863F26999DC700FC6ED1 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				4AAF725A269EDD3700D6AB35 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 4A85F7802695EE2F00E50359 /* Products */;
 			projectDirPath = "";
@@ -223,6 +239,7 @@
 				4A85F78F2695EE3700E50359 /* LaunchScreen.storyboard in Resources */,
 				4AFCB703269717E800CD02F5 /* GoogleService-Info.plist in Resources */,
 				4A85F78C2695EE3700E50359 /* Assets.xcassets in Resources */,
+				4AAF7260269EEFD900D6AB35 /* pizza.json in Resources */,
 				4A85F78A2695EE2F00E50359 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,11 +258,14 @@
 				4A85F7972695EEA900E50359 /* MainController.swift in Sources */,
 				4ACBA878269803D900DFF612 /* NetWorkDataManager.swift in Sources */,
 				4A85F7992695FFBD00E50359 /* CollectionViewCell.swift in Sources */,
+				4A7CE3AA269DAC2C007AA4BD /* extention.swift in Sources */,
 				4ACBA87A26980F0500DFF612 /* ModelPizza.swift in Sources */,
 				4A6DF4A82696DBBF003803B5 /* SrattViewController.swift in Sources */,
 				4A85F7852695EE2F00E50359 /* SceneDelegate.swift in Sources */,
 				4ACBA87C269861D400DFF612 /* Constants.swift in Sources */,
 				4A85F79B269606AC00E50359 /* detaillController.swift in Sources */,
+				4A3D41E52699E4AE0028E70E /* aboutUsController.swift in Sources */,
+				4A3D41E72699E4EA0028E70E /* roomCientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +469,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4AAF725A269EDD3700D6AB35 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.3;
+			};
+		};
 		4ABC863F26999DC700FC6ED1 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu";
@@ -468,6 +496,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4AAF725B269EDD3800D6AB35 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AAF725A269EDD3700D6AB35 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		4ABC864026999DC700FC6ED1 /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4ABC863F26999DC700FC6ED1 /* XCRemoteSwiftPackageReference "SideMenu" */;

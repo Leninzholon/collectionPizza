@@ -11,21 +11,29 @@ import Firebase
 class detaillController: UIViewController {
     let db = Firestore.firestore()
     var id: String!
-    var onePizza: ModelPizza? = nil
+    var onePizzas: [ModelPizza] = []
+    
+    @IBOutlet weak var quantityStapper: UIStepper!
+    @IBOutlet weak var quantityTF: UITextField!
+    @IBOutlet weak var priceLable: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLable: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        readCollection()
-        print("!!!!!!\(onePizza)")
-        guard let onePizza = onePizza else {
-            return
-        }
-        imageView.image = UIImage(named: onePizza.pizzaName)
+        //        readCollection()
+    
         
+        readOneDoc()
+        imageView.layer.cornerRadius = 30
+        quantityTF.text = String((quantityStapper.stepValue).rounded())
         
     }
+ 
     
-    
+    @IBAction func addPizzaAction(_ sender: UIStepper) {
+        quantityTF.text = String((quantityStapper.value).rounded())
+    }
     @IBAction func closeAct(_ sender: UIButton) {
         dismiss(animated: true)
     }
@@ -33,36 +41,37 @@ class detaillController: UIViewController {
     @IBAction func bayAction(_ sender: UIButton) {
         AddAllert()
     }
-    func readCollection() {
+    // MARK: read data from firestore
+    func readOneDoc() {
+        let docRef = db.collection("pizza").document(id)
         
-        db.collection("pizza").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for doc in querySnapshot!.documents {
-                    print("\(doc.documentID) => \(doc.data())")
-                    
-                    
-                    
-                    let data = doc.data()
-                    if let id = self.id{
-                        if id == doc.documentID{
-                            if let price = data["price"] as? String, let name = data["name"] as? String
-                            {
-                                let newPizza = ModelPizza(pizzaName: name, price: price)
-                                
-                                
-                                self.onePizza = newPizza
-                            }
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                if let data =  document.data(){
+                    if let price = data["price"] as? String,
+                       let name = data["name"] as? String,
+                       let id = data["id"] as? String,
+                       let description = data["description"] as? String
+                    {
+                            let newPizza = ModelPizza(pizzaName: name, price: price, id: id, description: description)
+                        
+                        DispatchQueue.main.async {
+                            self.onePizzas.append(newPizza)
+                            self.imageView.image = UIImage(named: self.onePizzas.first!.pizzaName)
+                            self.descriptionLable.text = self.onePizzas.first!.description
+                            self.nameLabel.text = self.onePizzas.first!.pizzaName
+                            self.priceLable.text = self.onePizzas.first!.price + " $"
                         }
+                        
+                        
                     }
                 }
+            } else {
+                print("Document does not exist")
             }
-            
-            
         }
     }
-    
+
 }
 extension detaillController{
     func AddAllert(){
@@ -71,7 +80,10 @@ extension detaillController{
             self.dismiss(animated: true)
         }
         ac.addAction(ok)
+        
+
         present(ac, animated: true, completion: nil)
     }
     
 }
+

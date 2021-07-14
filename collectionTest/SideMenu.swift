@@ -14,9 +14,9 @@ protocol MenuControllerDelegate {
 }
 
 enum SideMenuItem: String, CaseIterable {
-    case home = "Home"
-    case info = "Info"
-    case settings = "Settings"
+    case home = "Shop pizza"
+    case info = "About us"
+    case settings = "User room"
 }
 
 class MenuController: UITableViewController {
@@ -42,8 +42,8 @@ class MenuController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = color
-        view.backgroundColor = color
+        tableView.backgroundColor = #colorLiteral(red: 0.9441747069, green: 0.5805539489, blue: 0.2003090978, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.9441747069, green: 0.5805539489, blue: 0.2003090978, alpha: 1)
     }
 
     // Table
@@ -55,9 +55,9 @@ class MenuController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = menuItems[indexPath.row].rawValue
-        cell.textLabel?.textColor = .white
-        cell.backgroundColor = color
-        cell.contentView.backgroundColor = color
+        cell.textLabel?.textColor = #colorLiteral(red: 0.1468463242, green: 0.2587963939, blue: 0.27839306, alpha: 1)
+        cell.backgroundColor = #colorLiteral(red: 0.9441747069, green: 0.5805539489, blue: 0.2003090978, alpha: 1)
+        cell.contentView.backgroundColor = #colorLiteral(red: 0.9441747069, green: 0.5805539489, blue: 0.2003090978, alpha: 1)
         return cell
     }
 

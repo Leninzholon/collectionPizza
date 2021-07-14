@@ -12,28 +12,75 @@ import SideMenu
 
 
 
-class MainController: UICollectionViewController {
+class MainController: UICollectionViewController, MenuControllerDelegate {
+ 
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     let db = Firestore.firestore()
     var pizzaArray: [ModelPizza] = []
     var id: String?
-   private let sideMenu = SideMenuNavigationController(rootViewController: UIViewController())
+    private var sideMenu: SideMenuNavigationController?
+    
+    private let settingsController = roomCientViewController()
+    private let infoController = aboutUsController() 
 
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesBackButton = true
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        sideMenu.leftSide = true
+        let menu = MenuController(with: SideMenuItem.allCases)
+
+        menu.delegate = self
+
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+
         SideMenuManager.default.leftMenuNavigationController = sideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
+
+        addChildControllers()
         readCollection()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
     }
     
-    
+    private func addChildControllers() {
+        addChild(settingsController)
+        addChild(infoController)
+
+        view.addSubview(settingsController.view)
+        view.addSubview(infoController.view)
+
+        settingsController.view.frame = view.bounds
+        infoController.view.frame = view.bounds
+
+        settingsController.didMove(toParent: self)
+        infoController.didMove(toParent: self)
+
+        settingsController.view.isHidden = true
+        infoController.view.isHidden = true
+    }
+    func didSelectMenuItem(named: SideMenuItem) {
+        sideMenu?.dismiss(animated: true, completion: nil)
+
+        title = named.rawValue
+        switch named {
+        case .home:
+            settingsController.view.isHidden = true
+            infoController.view.isHidden = true
+
+        case .info:
+            settingsController.view.isHidden = true
+            infoController.view.isHidden = false
+
+        case .settings:
+            settingsController.view.isHidden = false
+            infoController.view.isHidden = true
+        }
+
+    }
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -60,24 +107,34 @@ class MainController: UICollectionViewController {
         cell.namePizza.text = pizzaArray[indexPath.item].pizzaName
         return cell
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detail"{
-            let dVC = segue.destination as! detaillController
-            dVC.id = id
+
+        
+    @IBAction func cartAction(_ sender: UIBarButtonItem) {
+      
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "cartBay"){
+        self.navigationController?.pushViewController(vc, animated: true)
             
         }
-    }
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let AlertController = UIAlertController(title: "Add pizza", message: nil, preferredStyle: .actionSheet)
-        let add = UIAlertAction(title: "Add", style: .default) { action in
-            
-        }
-        AlertController.addAction(add)
-        present(AlertController, animated: true, completion: nil)
+
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndex = collectionView.indexPath(for: sender as! UICollectionViewCell) else { return }
+        let id = selectedIndex.item
+            if segue.identifier == "detaill"{
+                let dVC = segue.destination as! detaillController
+                dVC.id = String(id)
+
+            }
+            
+
+        }
+    
+
+
     @IBAction func menuAction(_ sender: UIBarButtonItem) {
-       present(sideMenu, animated: true)
+      present(sideMenu!, animated: true)
+        
     }
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
@@ -90,22 +147,24 @@ class MainController: UICollectionViewController {
     }
     
     func readCollection() {
-        
+        id = ""
         db.collection("pizza").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for doc in querySnapshot!.documents {
                     print("\(doc.documentID) => \(doc.data())")
-                    self.id = doc.documentID
+                   
                     
                     let data = doc.data()
-                    if let price = data["price"] as? String, let name = data["name"] as? String
+                    if let price = data["price"] as? String, let name = data["name"] as? String,
+                    let id = data["id"] as? String
                     {
-                        let newPizza = ModelPizza(pizzaName: name, price: price)
+                        let newPizza = ModelPizza(pizzaName: name, price: price, id: id)
                         
                         
                         self.pizzaArray.append(newPizza)
+                       
                         print(self.pizzaArray)
                         DispatchQueue.main.async {
                             self.collectionView.reloadData()
