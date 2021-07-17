@@ -145,6 +145,7 @@ class MainController: UICollectionViewController, MenuControllerDelegate {
             print ("Error signing out: %@", signOutError)
         }
     }
+
     
     func readCollection() {
         id = ""

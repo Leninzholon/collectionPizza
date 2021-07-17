@@ -26,13 +26,12 @@ class detaillController: UIViewController {
         
         readOneDoc()
         imageView.layer.cornerRadius = 30
-        quantityTF.text = String((quantityStapper.stepValue).rounded())
-        
+        quantityTF.text = String(Int(quantityStapper.value))
     }
  
     
     @IBAction func addPizzaAction(_ sender: UIStepper) {
-        quantityTF.text = String((quantityStapper.value).rounded())
+        quantityTF.text = String(Int(quantityStapper.value))
     }
     @IBAction func closeAct(_ sender: UIButton) {
         dismiss(animated: true)
@@ -40,8 +39,26 @@ class detaillController: UIViewController {
     
     @IBAction func bayAction(_ sender: UIButton) {
         AddAllert()
+        writeBayToBD()
     }
     // MARK: read data from firestore
+    func writeBayToBD()  {
+        
+        let pizzaBay = ModelForBay(client: (Auth.auth().currentUser?.email)! as String, namePizza: nameLabel.text!, price: priceLable.text!, quantity: quantityStapper.value)
+        db.collection("order").document().setData([
+            "name": pizzaBay.namePizza,
+            "client": pizzaBay.client,
+            "price": pizzaBay.price,
+            "quantity": pizzaBay.quantity,
+            
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
     func readOneDoc() {
         let docRef = db.collection("pizza").document(id)
         

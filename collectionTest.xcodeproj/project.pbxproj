@@ -21,11 +21,13 @@
 		4A85F7972695EEA900E50359 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F7962695EEA900E50359 /* MainController.swift */; };
 		4A85F7992695FFBD00E50359 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F7982695FFBD00E50359 /* CollectionViewCell.swift */; };
 		4A85F79B269606AC00E50359 /* detaillController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A85F79A269606AC00E50359 /* detaillController.swift */; };
+		4AA90904269F38B600CE6AAA /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA90903269F38B600CE6AAA /* CartViewController.swift */; };
+		4AA90906269F398300CE6AAA /* ModelForBay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA90905269F398300CE6AAA /* ModelForBay.swift */; };
 		4AAF725C269EDD3800D6AB35 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4AAF725B269EDD3800D6AB35 /* Lottie */; };
 		4AAF7260269EEFD900D6AB35 /* pizza.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AAF725F269EEFD900D6AB35 /* pizza.json */; };
 		4ABC864126999DC700FC6ED1 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABC864026999DC700FC6ED1 /* SideMenu */; };
 		4ABC86432699BF6A00FC6ED1 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC86422699BF6A00FC6ED1 /* SideMenu.swift */; };
-		4ACBA878269803D900DFF612 /* NetWorkDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBA877269803D900DFF612 /* NetWorkDataManager.swift */; };
+		4AC45AEC269F471700C04C51 /* loginPizza.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AC45AEB269F471700C04C51 /* loginPizza.json */; };
 		4ACBA87A26980F0500DFF612 /* ModelPizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBA87926980F0500DFF612 /* ModelPizza.swift */; };
 		4ACBA87C269861D400DFF612 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBA87B269861D400DFF612 /* Constants.swift */; };
 		4AFCB6FD2697179A00CD02F5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4AFCB6FC2697179A00CD02F5 /* FirebaseAnalytics */; };
@@ -51,9 +53,11 @@
 		4A85F7962695EEA900E50359 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		4A85F7982695FFBD00E50359 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4A85F79A269606AC00E50359 /* detaillController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detaillController.swift; sourceTree = "<group>"; };
+		4AA90903269F38B600CE6AAA /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		4AA90905269F398300CE6AAA /* ModelForBay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForBay.swift; sourceTree = "<group>"; };
 		4AAF725F269EEFD900D6AB35 /* pizza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pizza.json; sourceTree = "<group>"; };
 		4ABC86422699BF6A00FC6ED1 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
-		4ACBA877269803D900DFF612 /* NetWorkDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkDataManager.swift; sourceTree = "<group>"; };
+		4AC45AEB269F471700C04C51 /* loginPizza.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loginPizza.json; sourceTree = "<group>"; };
 		4ACBA87926980F0500DFF612 /* ModelPizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPizza.swift; sourceTree = "<group>"; };
 		4ACBA87B269861D400DFF612 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4AFCB702269717E800CD02F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				4A85F7982695FFBD00E50359 /* CollectionViewCell.swift */,
 				4A85F7962695EEA900E50359 /* MainController.swift */,
 				4A85F79A269606AC00E50359 /* detaillController.swift */,
+				4AA90903269F38B600CE6AAA /* CartViewController.swift */,
 				4A3D41E42699E4AE0028E70E /* aboutUsController.swift */,
 				4A3D41E62699E4EA0028E70E /* roomCientViewController.swift */,
 			);
@@ -131,6 +136,7 @@
 				4A85F79E269608AC00E50359 /* SupportFiles */,
 				4A85F78B2695EE3700E50359 /* Assets.xcassets */,
 				4AAF725F269EEFD900D6AB35 /* pizza.json */,
+				4AC45AEB269F471700C04C51 /* loginPizza.json */,
 				4A85F7902695EE3700E50359 /* Info.plist */,
 				4AFCB702269717E800CD02F5 /* GoogleService-Info.plist */,
 			);
@@ -161,8 +167,8 @@
 		4ACBA8762698035F00DFF612 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4ACBA877269803D900DFF612 /* NetWorkDataManager.swift */,
 				4ACBA87926980F0500DFF612 /* ModelPizza.swift */,
+				4AA90905269F398300CE6AAA /* ModelForBay.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC45AEC269F471700C04C51 /* loginPizza.json in Resources */,
 				4A85F78F2695EE3700E50359 /* LaunchScreen.storyboard in Resources */,
 				4AFCB703269717E800CD02F5 /* GoogleService-Info.plist in Resources */,
 				4A85F78C2695EE3700E50359 /* Assets.xcassets in Resources */,
@@ -251,18 +258,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA90906269F398300CE6AAA /* ModelForBay.swift in Sources */,
 				4A6DF4AA2696E2F4003803B5 /* LoginViewController.swift in Sources */,
 				4A85F7832695EE2F00E50359 /* AppDelegate.swift in Sources */,
 				4A6DF4AC2696E313003803B5 /* RegistrationViewController.swift in Sources */,
 				4ABC86432699BF6A00FC6ED1 /* SideMenu.swift in Sources */,
 				4A85F7972695EEA900E50359 /* MainController.swift in Sources */,
-				4ACBA878269803D900DFF612 /* NetWorkDataManager.swift in Sources */,
 				4A85F7992695FFBD00E50359 /* CollectionViewCell.swift in Sources */,
 				4A7CE3AA269DAC2C007AA4BD /* extention.swift in Sources */,
 				4ACBA87A26980F0500DFF612 /* ModelPizza.swift in Sources */,
 				4A6DF4A82696DBBF003803B5 /* SrattViewController.swift in Sources */,
 				4A85F7852695EE2F00E50359 /* SceneDelegate.swift in Sources */,
 				4ACBA87C269861D400DFF612 /* Constants.swift in Sources */,
+				4AA90904269F38B600CE6AAA /* CartViewController.swift in Sources */,
 				4A85F79B269606AC00E50359 /* detaillController.swift in Sources */,
 				4A3D41E52699E4AE0028E70E /* aboutUsController.swift in Sources */,
 				4A3D41E72699E4EA0028E70E /* roomCientViewController.swift in Sources */,
